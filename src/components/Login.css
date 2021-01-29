@@ -1,0 +1,23 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 143, 178) 0%,
+    rgb(167, 151, 255) 50%,
+    rgb(0, 229, 255) 100%
+  ) !important;
+  height: 100vh;
+  z-index: -1;
+}
+
+.login__card {
+  max-width: 400px;
+}
+
+@media (max-width: 28.75em) {
+  .login__card {
+    max-width: 300px;
+  }
+}
