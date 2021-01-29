@@ -1,6 +1,6 @@
 .message {
   padding: 10px 10px 10px 2px;
-  margin: 10px;
+  margin: 5px;
   width: 70vw;
   max-width: fit-content;
 }
@@ -16,6 +16,23 @@
   margin-left: auto;
   color: rgb(2, 2, 2);
   text-align: right !important;
+}
+
+.message__username {
+  font-weight: 700;
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: gray;
+}
+
+.message__timestamp {
+  text-align: right;
+  margin-left: 5px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  color: #312a2a;
 }
 
 .message__userCard {

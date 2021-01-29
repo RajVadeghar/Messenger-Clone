@@ -8,14 +8,11 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
 
-  function signup(email, password, name) {
-    return auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((authUser) => {
-        authUser.user.updateProfile({
-          displayName: name,
-        });
-      });
+  async function signup(email, password, name) {
+    const authUser = await auth.createUserWithEmailAndPassword(email, password);
+    authUser.user.updateProfile({
+      displayName: name,
+    });
   }
 
   function login(email, password) {

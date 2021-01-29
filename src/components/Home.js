@@ -124,7 +124,6 @@ function Home() {
               style={{ marginRight: "10px" }}
               variant="contained"
               color="primary"
-              onClick={setDemoName("")}
               className="app__loginMessage"
             >
               Sign In
