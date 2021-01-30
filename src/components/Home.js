@@ -43,7 +43,7 @@ function Home() {
 
     db.collection("messages").add({
       message: input,
-      username: currentUser.displayName,
+      username: currentUser ? currentUser.displayName : `Guest-${demoName}`,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 

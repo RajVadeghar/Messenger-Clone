@@ -4,16 +4,27 @@ import "./Message.css";
 
 const Message = forwardRef(({ message, username }, ref) => {
   const isUser = username === message.username;
+  const demoUser = `Guest-${username}` === message.username;
+
   return (
-    <div ref={ref} className={`message ${isUser && "message__user"}`}>
+    <div
+      ref={ref}
+      className={`message ${(isUser || demoUser) && "message__user"}`}
+    >
       <p className="message__username">
-        {!isUser && `${message.username || "Unknown User"}`}
+        {(!isUser || !demoUser) && `${message.username || "Unknown User"}`}
       </p>
-      <div className={isUser ? "message__userCard" : "message__guestCard"}>
+      <div
+        className={
+          isUser || demoUser ? "message__userCard" : "message__guestCard"
+        }
+      >
         <Typography variant="h6" className="message__text" component="h2">
           <p>{message.message}</p>
           <p className="message__timestamp">
-            {message.timestamp.toDate().toString().slice(0, 24)}
+            {!isUser && !demoUser
+              ? message.timestamp.toDate().toString().slice(0, 24)
+              : ""}
           </p>
         </Typography>
       </div>
